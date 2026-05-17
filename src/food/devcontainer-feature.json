@@ -1,7 +1,7 @@
 {
     "name": "My Favorite Food",
     "id": "food",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A feature to remind you of your favorite food",
     "options": {
         "favorite": {
@@ -9,7 +9,8 @@
             "enum": [
                 "pizza",
                 "donuts",
-                "tacos"
+                "tacos",
+                "cheeseburger"
             ],
             "default": "tacos",
             "description": "Choose your favorite food."
