@@ -50,6 +50,27 @@ $ color
 my favorite color is green
 ```
 
+### `food`
+
+Running `food` inside the built container will print your favorite food to standard out.
+
+```jsonc
+{
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/devcontainers/feature-starter/food:1": {
+            "favorite": "pizza"
+        }
+    }
+}
+```
+
+```bash
+$ food
+
+my favorite food is pizza
+```
+
 ## Repo and Feature Structure
 
 Similar to the [`devcontainers/features`](https://github.com/devcontainers/features) repo, this repository has a `src` folder.  Each Feature has its own sub-folder, containing at least a `devcontainer-feature.json` and an entrypoint script `install.sh`. 
@@ -60,6 +81,9 @@ Similar to the [`devcontainers/features`](https://github.com/devcontainers/featu
 │   │   ├── devcontainer-feature.json
 │   │   └── install.sh
 │   ├── color
+│   │   ├── devcontainer-feature.json
+│   │   └── install.sh
+│   ├── food
 │   │   ├── devcontainer-feature.json
 │   │   └── install.sh
 |   ├── ...
@@ -123,11 +147,12 @@ This repo contains a **GitHub Action** [workflow](.github/workflows/release.yaml
 
 *Allow GitHub Actions to create and approve pull requests* should be enabled in the repository's `Settings > Actions > General > Workflow permissions` for auto generation of `src/<feature>/README.md` per Feature (which merges any existing `src/<feature>/NOTES.md`).
 
-By default, each Feature will be prefixed with the `<owner/<repo>` namespace.  For example, the two Features in this repository can be referenced in a `devcontainer.json` with:
+By default, each Feature will be prefixed with the `<owner/<repo>` namespace.  For example, the three Features in this repository can be referenced in a `devcontainer.json` with:
 
 ```
 ghcr.io/devcontainers/feature-starter/color:1
 ghcr.io/devcontainers/feature-starter/hello:1
+ghcr.io/devcontainers/feature-starter/food:1
 ```
 
 The provided GitHub Action will also publish a third "metadata" package with just the namespace, eg: `ghcr.io/devcontainers/feature-starter`.  This contains information useful for tools aiding in Feature discovery.

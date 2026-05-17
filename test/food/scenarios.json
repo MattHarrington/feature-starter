@@ -1,0 +1,33 @@
+{
+    "my_favorite_food_is_donuts": {
+        "image": "mcr.microsoft.com/devcontainers/base:focal",
+        "features": {
+            "ghcr.io/devcontainers/features/common-utils:1": {
+                "installZsh": false,
+                "installOhMyZsh": false,
+                "upgradePackages": false,
+                "username": "octocat"
+            },
+            "food": {
+                "favorite": "donuts"
+            }
+        },
+        "remoteUser": "octocat"
+    },
+    "pizza": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "food": {
+                "favorite": "pizza"
+            }
+        }
+    },
+    "tacos": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "food": {
+                "favorite": "tacos"
+            }
+        }
+    }
+}
